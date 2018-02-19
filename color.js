@@ -100,6 +100,9 @@ easyBtn.addEventListener("click" , function () {
         if(colors[c]){
             squares[c].style.background = colors[c];
         }
+        else {
+            squares[c].style.display = "none";
+        }
     }
 });
 
@@ -110,4 +113,15 @@ easyBtn.addEventListener("click" , function () {
 hardBtn.addEventListener("click" , function () {
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
+
+
+    colors = generateRandomColors(6);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+
+    for(var c = 0 ; c < squares.length ; c++){
+            squares[c].style.background = colors[c];
+            squares[c].style.display = "block";
+
+    }
 });
