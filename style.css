@@ -1,5 +1,7 @@
 body {
     background-color: #232323;
+    margin: 0;
+    font-family: "Avernir", serif;
 }
 
 .square {
@@ -16,7 +18,12 @@ body {
 }
 
 h1 {
+    font-weight: normal;
     color: white;
+    text-align: center;
+    background-color: steelblue;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 #stripe {
@@ -28,4 +35,7 @@ h1 {
 
 .selected{
     background: blue;
+}
+#colorDisplay{
+    font-size: 200%;
 }
