@@ -94,11 +94,11 @@ easyBtn.addEventListener("click" , function () {
 
     colors = generateRandomColors(3);
     pickedColor = pickColor();
-    colorDisplay.textContent = pickColor();
+    colorDisplay.textContent = pickedColor;
 
     for(var c = 0 ; c < squares.length ; c++){
         if(colors[c]){
-            
+            squares[c].style.background = colors[c];
         }
     }
 });
