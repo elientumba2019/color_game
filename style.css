@@ -18,12 +18,14 @@ body {
 }
 
 h1 {
+    padding: 20px 0;
     font-weight: normal;
     color: white;
     text-align: center;
     background-color: steelblue;
     margin: 0;
     text-transform: uppercase;
+    line-height: 1.1;
 }
 
 #stripe {
@@ -38,4 +40,12 @@ h1 {
 }
 #colorDisplay{
     font-size: 200%;
+}
+
+
+button{
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
 }
