@@ -19,9 +19,13 @@ resetButton.addEventListener("click", function() {
     colors = generateRandomColors(numberOfSquares);
     //pick a new random color from array
     pickedColor = pickColor();
+    this.textContent = "New Colors";
     //change colorDisplay to match picked Color
     colorDisplay.textContent = pickedColor;
     //change colors of squares
+
+    messageDisplay.textContent = "";
+
     for(var i = 0; i < squares.length; i++) {
         squares[i].style.background = colors[i];
     }
