@@ -1,12 +1,8 @@
-body{
-    background: #232323;
+body {
+    background-color: #232323;
 }
 
-h1{
-    color: white;
-}
-
-.square{
+.square {
     width: 30%;
     background: purple;
     padding-bottom: 30%;
@@ -14,15 +10,22 @@ h1{
     margin: 1.66%;
 }
 
-#container{
+#container {
+    margin: 0px auto;
     max-width: 600px;
-    margin: 0 auto;
 }
 
+h1 {
+    color: white;
+}
 
-#stripe{
-    background-color: white;
+#stripe {
+    background: white;
     height: 30px;
     text-align: center;
     color: black;
+}
+
+.selected{
+    background: blue;
 }

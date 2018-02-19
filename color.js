@@ -1,11 +1,30 @@
-
 var colors = generateRandomColors(6);
+
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easybtn");
+var hardBtn = document.querySelector("#hardbtn");
+
+
+
+resetButton.addEventListener("click", function() {
+    //generate all new colors
+    colors = generateRandomColors(6);
+    //pick a new random color from array
+    pickedColor = pickColor();
+    //change colorDisplay to match picked Color
+    colorDisplay.textContent = pickedColor;
+    //change colors of squares
+    for(var i = 0; i < squares.length; i++) {
+        squares[i].style.background = colors[i];
+    }
+    h1.style.background = "#232323";
+});
+
 
 
 
@@ -20,75 +39,75 @@ for(var i = 0; i < squares.length; i++){
         //grab color of clicked squares
         var clickedColor = this.style.background;
         //compare color to pickedColor
-
         if(clickedColor === pickedColor) {
-            messageDisplay.textContent = "Correct";
+            messageDisplay.textContent = "Correct!";
+            resetButton.textContent = "Play Again?";
             changeColors(clickedColor);
-            h1.style.backgroundColor = clickedColor;
-        }
-
-        else {
-            this.style.backgroundColor = "#232323";
-            messageDisplay.textContent = "Try Again"
+            h1.style.background = clickedColor;
+        } else {
+            this.style.background = "#232323";
+            messageDisplay.textContent = "Try Again";
         }
     });
 }
 
-
-/**
- * changes all color to match the selected color
- * @param color
- */
-function changeColors(color){
-    //loop and change color
-    for(var c = 0 ; c < colors.length ; c++){
-        squares[c].style.backgroundColor = color;
+function changeColors(color) {
+    //loop through all squares
+    for(var i = 0; i < squares.length; i++) {
+        //change each color to match given color
+        squares[i].style.background = color;
     }
 }
 
-
-/**
- * picks a color
- */
 function pickColor() {
-   var random =  Math.floor((Math.random() * colors.length));
-   return colors[random];
+    var random = Math.floor(Math.random() * colors.length);
+    return colors[random];
 }
 
-
-/**
- * generate random Array
- */
 function generateRandomColors(num) {
-    var array = [];
-
-    for(var c = 0 ; c < num ; c++){
-        array.push(randomColor());
+    //make an array
+    var arr = [];
+    //add num random colors to arr
+    for(var i = 0; i < num; i++) {
+        //get random color and push into arr
+        arr.push(randomColor());
     }
-    return array;
+    //return that array
+    return arr;
 }
 
-
-/**
- * generate a single color
- */
 function randomColor() {
-     var red = Math.floor(Math.random() * 256);
-     var green = Math.floor(Math.random() * 256);
-     var blues = Math.floor(Math.random() * 256);
-
-     return "rgb(" + red + ", " + green + ", " + blues + ")";
+    //pick a "red" from 0 - 255
+    var r = Math.floor(Math.random() * 256);
+    //pick a "green" from 0 - 255
+    var g = Math.floor(Math.random() * 256);
+    //pick a "blue" from 0 - 255
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
 
-resetButton.addEventListener("click" , function () {
 
-    colors = generateRandomColors(6);
+easyBtn.addEventListener("click" , function () {
+    easyBtn.classList.add("selected");
+    hardBtn.classList.remove("selected");
+
+    colors = generateRandomColors(3);
     pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
+    colorDisplay.textContent = pickColor();
 
-    for(var c = 0 ; c < squares ;c++){
-        squares[c].style.background = colors[c];
+    for(var c = 0 ; c < squares.length ; c++){
+        if(colors[c]){
+            
+        }
     }
 });
 
+
+
+
+
+hardBtn.addEventListener("click" , function () {
+    hardBtn.classList.add("selected");
+    easyBtn.classList.remove("selected");
+});
