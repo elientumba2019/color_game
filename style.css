@@ -10,6 +10,7 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 15% ;
 }
 
 #container {
@@ -36,7 +37,8 @@ h1 {
 }
 
 .selected{
-    background: blue;
+    color: #fff;
+    background: steelblue;
 }
 #colorDisplay{
     font-size: 200%;
@@ -52,4 +54,17 @@ button{
     color: steelblue;
     letter-spacing: 1px;
     font-size: inherit;
+    transition: all 0.5s;
 }
+
+button:hover{
+    color: #fff;
+    background: steelblue;
+}
+
+
+#message{
+    display: inline-block;
+    width: 20%;
+}
+
